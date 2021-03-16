@@ -1,0 +1,16 @@
+D:\업무\Source\repo\TestCodes\TestCodes\TestCodes\bin\Debug\net5.0\TestCodes.exe
+D:\업무\Source\repo\TestCodes\TestCodes\TestCodes\bin\Debug\net5.0\TestCodes.deps.json
+D:\업무\Source\repo\TestCodes\TestCodes\TestCodes\bin\Debug\net5.0\TestCodes.runtimeconfig.json
+D:\업무\Source\repo\TestCodes\TestCodes\TestCodes\bin\Debug\net5.0\TestCodes.runtimeconfig.dev.json
+D:\업무\Source\repo\TestCodes\TestCodes\TestCodes\bin\Debug\net5.0\TestCodes.dll
+D:\업무\Source\repo\TestCodes\TestCodes\TestCodes\bin\Debug\net5.0\ref\TestCodes.dll
+D:\업무\Source\repo\TestCodes\TestCodes\TestCodes\bin\Debug\net5.0\TestCodes.pdb
+D:\업무\Source\repo\TestCodes\TestCodes\TestCodes\obj\Debug\net5.0\TestCodes.csprojAssemblyReference.cache
+D:\업무\Source\repo\TestCodes\TestCodes\TestCodes\obj\Debug\net5.0\TestCodes.GeneratedMSBuildEditorConfig.editorconfig
+D:\업무\Source\repo\TestCodes\TestCodes\TestCodes\obj\Debug\net5.0\TestCodes.AssemblyInfoInputs.cache
+D:\업무\Source\repo\TestCodes\TestCodes\TestCodes\obj\Debug\net5.0\TestCodes.AssemblyInfo.cs
+D:\업무\Source\repo\TestCodes\TestCodes\TestCodes\obj\Debug\net5.0\TestCodes.csproj.CoreCompileInputs.cache
+D:\업무\Source\repo\TestCodes\TestCodes\TestCodes\obj\Debug\net5.0\TestCodes.dll
+D:\업무\Source\repo\TestCodes\TestCodes\TestCodes\obj\Debug\net5.0\ref\TestCodes.dll
+D:\업무\Source\repo\TestCodes\TestCodes\TestCodes\obj\Debug\net5.0\TestCodes.pdb
+D:\업무\Source\repo\TestCodes\TestCodes\TestCodes\obj\Debug\net5.0\TestCodes.genruntimeconfig.cache
