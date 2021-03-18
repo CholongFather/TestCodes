@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using static System.Console;
@@ -9,42 +10,59 @@ namespace TestCodes
 	{
 		static void Main()
 		{
-			var input = int.Parse(ReadLine());
-			var myPokemons = new List<MyPokemon>();
-
-			for (int i = 0; i < input; i++)
-			{
-				var myPokemon = new MyPokemon();
-				var (name, candys) = (ReadLine(), ReadLine().Split(' ').Select(double.Parse).ToList());
-
-				myPokemon.Name = name;
-				myPokemon.Evolution = 0;
-
-				var e = candys[1];
-				var n = candys[0];
-
-				while(e >= 0)
-				{
-					var c = e - n + 2;
-
-					if (c >= 0)
-						myPokemon.Evolution++;
-
-					e = c;
-				}
-
-				myPokemons.Add(myPokemon);
-			}
-
-			WriteLine(myPokemons.Sum(c => c.Evolution));
-			var max = myPokemons.Max(c => c.Evolution);
-			WriteLine(myPokemons.FirstOrDefault(c => c.Evolution == max).Name);
-		}
-
-		public class MyPokemon
-		{
-			public string Name { get; set; }
-			public int Evolution { get; set; }
 		}
 	}
 }
+
+//static void Main()
+//{
+//	List<int> aa = new List<int>();
+//	var num = int.Parse(ReadLine());
+
+//	for (var i = 2; i < num; i++)
+//	{
+//		while (num % i == 0)
+//		{
+//			num = num / i;
+//			aa.Add(i);
+//		}
+//	}
+
+//	if (aa.Count() == 0)
+//	{
+//		WriteLine(0);
+//		return;
+//	}
+//	var a = 0;
+//	var j = 1;
+//	while (true)
+//	{
+//		j *= 2;
+//		a++;
+//		if (aa.Count() <= j)
+//		{
+//			WriteLine(a);
+//			break;
+//		}
+//	}
+//}
+
+
+///WTF 뒤집기
+//var sequenceList = new List<string>();
+//var (input, sequence) = (int.Parse(ReadLine()), ReadLine().Split(' ').ToList());
+
+//for (int i = 1; i < input; i++)
+//{
+//	var sb = new StringBuilder();
+//	sequence = sequence.Skip(1).Concat(sequence.Take(1)).ToList();
+
+//	foreach (var cs in sequence)
+//		sb.Append(cs).Append(' ');
+
+//	sequenceList.Add(sb.ToString().TrimEnd(' '));
+//	sequenceList = sequenceList.OrderBy(c => c).Take(1).ToList();
+//}
+
+//var item = sequenceList.FirstOrDefault();
+//WriteLine(item);
