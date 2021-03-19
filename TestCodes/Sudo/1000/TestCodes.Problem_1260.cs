@@ -19,7 +19,6 @@ namespace TestCodes
 			var road = numbers[0] + 1;
 			var now = numbers[2];
 
-
 			adj = new int[dot, road];
 
 			for (int i = 0; i < numbers[1]; i++)
@@ -29,64 +28,55 @@ namespace TestCodes
 				adj[adjRord[1], adjRord[0]] = 1;
 			}
 
+			arrVisited = new bool[dot];
 			DFS(now, dot);
 			WriteLine(sb.ToString().TrimEnd(' '));
 			sb.Clear();
+
+			arrVisited = new bool[dot];
 			BFS(now, dot);
 			WriteLine(sb.ToString().TrimEnd(' '));
 		}
 
 		private static void DFS(int now, int dot)
 		{
-			arrVisited = new bool[dot];
+			sb.Append(now + " ");
+			arrVisited[now] = true;
 
-			Stack<int> stack = new Stack<int>();
-			stack.Push(now);
-
-			while (stack.Count != 0)
+			for (int i = 1; i < dot; i++)
 			{
-				var currentLocation = stack.Pop();
-				sb.Append(currentLocation + " ");
-				arrVisited[currentLocation] = true;
+				if (adj[now, i] == 0)
+					continue;
 
-				for (int next = 1; next < dot; next++)
-				{
-					if (adj[currentLocation, next] == 0)
-						continue;
+				if (arrVisited[i])
+					continue;
 
-					if (arrVisited[next])
-						continue;
-
-					if (!stack.Contains(next))
-						stack.Push(next);
-				}
+				DFS(i, dot);
 			}
 		}
 
 		private static void BFS(int now, int dot)
 		{
-			arrVisited = new bool[dot];
+			var q = new Queue<int>();
+			q.Enqueue(now);
 
-			Queue<int> queue = new Queue<int>();
-			queue.Enqueue(now);
-
-			while (queue.Count != 0)
+			while (q.Count != 0)
 			{
-				var currentLocation = queue.Dequeue();
+				now = q.Dequeue();
 
-				sb.Append(currentLocation + " ");
-				arrVisited[currentLocation] = true;
+				sb.Append(now + " ");
+				arrVisited[now] = true;
 
 				for (int next = 1; next < dot; next++)
 				{
-					if (adj[currentLocation, next] == 0)
+					if (adj[now, next] == 0)
 						continue;
 
 					if (arrVisited[next])
 						continue;
 
-					if (!queue.Contains(next))
-						queue.Enqueue(next);
+					if (!q.Contains(next))
+						q.Enqueue(next);
 				}
 			}
 		}
