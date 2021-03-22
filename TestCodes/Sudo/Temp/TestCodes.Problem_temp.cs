@@ -10,10 +10,6 @@ namespace TestCodes
 	{
 		static void Main_()
 		{
-
-
-
-
 		}
 	}
 }

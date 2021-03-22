@@ -16,8 +16,7 @@ namespace TestCodes
 
 			for (int i = 0; i < testCase; i++)
 			{
-				string input = ReadLine();
-				var numbers = input.Split(' ').Select(Int32.Parse).ToList();
+				var numbers = ReadLine().Split(' ').Select(Int32.Parse).ToList();
 
 				var firstReword = RewordCatch(numbers[0], Reword1st);
 				var secondReword = RewordCatch(numbers[1], Reword2nd);
