@@ -1,25 +1,24 @@
 ﻿using System;
-using System.Text;
-using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using static System.Console;
-using System.IO;
+using System.Collections.Generic;
 
 namespace TestCodes
 {
-    class Problem
-    {
-        static void Main()
-        {
+	class Problem_5430
+	{
+		static void Main_5430()
+		{
             var taseCase = int.Parse(ReadLine());
 
-			for (var i = 0; i < taseCase; i++)
-			{
+            for (var i = 0; i < taseCase; i++)
+            {
                 var exec = ReadLine(); ReadLine();
                 var list = ReadLine().Split(new string[] { ",", "[", "]" }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
                 var reverse = false;
 
-                foreach(var item in exec)
+                foreach (var item in exec)
                 {
                     if (item.Equals('R'))
                         reverse = !reverse;
@@ -32,8 +31,8 @@ namespace TestCodes
                             list.RemoveAt(list.Count - 1);
                         else
                             list.RemoveAt(0);
-					}
-				}
+                    }
+                }
 
                 if (reverse)
                 {
@@ -45,9 +44,9 @@ namespace TestCodes
 
                 continue;
 
-                Error:
-				WriteLine("error");
+            Error:
+                WriteLine("error");
             }
         }
-    }
+	}
 }
