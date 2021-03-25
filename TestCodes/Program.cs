@@ -9,45 +9,58 @@ namespace TestCodes
 {
     class Problem
     {
-        static void Main()
+        static char[,] star = new char[3, 3] { { '*', '*', '*' }, { '*', ' ', '*' }, { '*', '*', '*' } };
+        static void Main(string[] args)
         {
-            var taseCase = int.Parse(ReadLine());
+            var size = int.Parse(ReadLine());
+            Star(size);
+            Draw(size);
+        }
 
-			for (var i = 0; i < taseCase; i++)
+        static void Star(int size)
+        {
+            if (size % 3 != 0 || size == 3)
+                return;
+            else
+                Star(size / 3);
+
+            var newStar = new char[size, size];
+
+            for (var i = 0; i < size; i++)
+            for (var j = 0; j < size; j++)
 			{
-                var exec = ReadLine(); ReadLine();
-                var list = ReadLine().Split(new string[] { ",", "[", "]" }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
-                var reverse = false;
+                var x = (double)i / size;
+                var y = (double)j / size;
 
-                foreach(var item in exec)
+				if (x >= 1.0 / 3.0 && x < 2.0 / 3.0 && y >= 1.0 / 3.0 && y < 2.0 / 3.0)
+					newStar[i, j] = ' ';
+				else
+					newStar[i, j] = star[i % (size / 3), j % (size / 3)];
+			}
+
+            star = newStar;
+        }
+
+        static void Draw(int size)
+        {
+            var sb = new StringBuilder();
+
+            if (size == 0)
+                sb.Append(' ');
+
+            if (size == 1)
+                sb.Append('*');
+
+            for (var i = 0; i < size; i++)
+            {
+                for (var j = 0; j < size; j++)
                 {
-                    if (item.Equals('R'))
-                        reverse = !reverse;
-                    else
-                    {
-                        if (list.Count == 0)
-                            goto Error;
-
-                        if (reverse)
-                            list.RemoveAt(list.Count - 1);
-                        else
-                            list.RemoveAt(0);
-					}
-				}
-
-                if (reverse)
-                {
-                    list.Reverse();
-                    WriteLine($"[{string.Join(',', list)}]");
+                    sb.Append(star[i, j]);
                 }
-                else
-                    WriteLine($"[{string.Join(',', list)}]");
-
-                continue;
-
-                Error:
-				WriteLine("error");
+                sb.AppendLine();
             }
+
+            WriteLine(sb.ToString());
         }
     }
 }

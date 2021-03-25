@@ -11,8 +11,7 @@ namespace TestCodes
 		{
 			int testCase = Convert.ToInt32(ReadLine());
 
-			string input = ReadLine();
-			var numbers = input.Split(' ').Select(double.Parse).OrderBy(c => c).ToList();
+			var numbers = ReadLine().Split(' ').Select(double.Parse).OrderBy(c => c).ToList();
 
 			StringBuilder returnStr = new StringBuilder();
 
