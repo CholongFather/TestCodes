@@ -7,60 +7,65 @@ using System.IO;
 
 namespace TestCodes
 {
-    class Problem
+    class Problem_
     {
-        static char[,] star = new char[3, 3] { { '*', '*', '*' }, { '*', ' ', '*' }, { '*', '*', '*' } };
-        static void Main(string[] args)
-        {
-            var size = int.Parse(ReadLine());
-            Star(size);
-            Draw(size);
-        }
-
-        static void Star(int size)
-        {
-            if (size % 3 != 0 || size == 3)
-                return;
-            else
-                Star(size / 3);
-
-            var newStar = new char[size, size];
-
-            for (var i = 0; i < size; i++)
-            for (var j = 0; j < size; j++)
-			{
-                var x = (double)i / size;
-                var y = (double)j / size;
-
-				if (x >= 1.0 / 3.0 && x < 2.0 / 3.0 && y >= 1.0 / 3.0 && y < 2.0 / 3.0)
-					newStar[i, j] = ' ';
-				else
-					newStar[i, j] = star[i % (size / 3), j % (size / 3)];
-			}
-
-            star = newStar;
-        }
-
-        static void Draw(int size)
+        static void Main_(string[] args)
         {
             var sb = new StringBuilder();
+            var ex = new char[] { '*', '/', '+', '-', '(', ')' };
+            
+            var expression = ReadLine();
+            var stack = new Stack<char>();
 
-            if (size == 0)
-                sb.Append(' ');
-
-            if (size == 1)
-                sb.Append('*');
-
-            for (var i = 0; i < size; i++)
+            foreach(var item in expression)
             {
-                for (var j = 0; j < size; j++)
+                if (ex.Contains(item))
                 {
-                    sb.Append(star[i, j]);
-                }
-                sb.AppendLine();
+                    if (item.Equals(')'))
+                    {
+                        char s;
+                        while (!(s = stack.Pop()).Equals('('))
+                        {
+                            sb.Append(s);
+                        }
+
+                        continue;
+                    }
+
+                    if (stack.Count > 0)
+                    {
+                        //우선순위 () */ +-
+                        switch (item)
+                        {
+                            case '+':
+                            case '-':
+                                {
+                                    while (!stack.Peek().Equals('('))
+                                    {
+                                        sb.Append(stack.Pop());
+                                    }
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                        stack.Push(item);
+                    }
+                    else
+                        stack.Push(item);
+				}
+                else
+                {
+                    sb.Append(item);
+				}
+			}
+
+            while(stack.Count != 0)
+            {
+                sb.Append(stack.Pop());
             }
 
-            WriteLine(sb.ToString());
+			WriteLine(sb.ToString());
         }
     }
 }
