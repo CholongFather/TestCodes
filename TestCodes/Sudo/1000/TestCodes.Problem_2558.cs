@@ -7,11 +7,11 @@ using System.IO;
 
 namespace TestCodes
 {
-    class Problem
-    {
-        static void Main()
-        {
-            var numbers = ReadLine().Split(' ').Select(int.Parse).ToList();
-        }
-    }
+	class Problem_2558
+	{
+		static void Main_2558()
+		{
+			WriteLine(int.Parse(ReadLine()) + int.Parse(ReadLine()));
+		}
+	}
 }

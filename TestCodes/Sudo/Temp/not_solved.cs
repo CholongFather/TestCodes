@@ -88,3 +88,35 @@ namespace TestCodes.Sudo.Temp
 
 //	WriteLine(2);
 //}
+
+//var sr = new StreamReader(OpenStandardInput());
+//var sw = new StreamWriter(OpenStandardOutput());
+//var sb = new StringBuilder();
+
+//var sumSize = sr.ReadLine().Split(' ').Select(int.Parse).ToList();
+//var numbers = new int[sumSize[0]];
+//var j = 0;
+//foreach (var item in sr.ReadLine().Split(' ').Select(int.Parse))
+//{
+//	if (j == 0)
+//		numbers[j] = item;
+//	else
+//		numbers[j] = numbers[j - 1] + item;
+
+//	j++;
+//}
+
+//for (var i = 0; i < sumSize[1]; i++)
+//{
+//	var result = 0;
+//	var range = sr.ReadLine().Split(' ').Select(int.Parse).ToList();
+
+//	if (range[0] == 1)
+//		result = numbers[range[1] - 1];
+//	else
+//		result = numbers[range[1] - 1] - numbers[range[0] - 2];
+
+//	sb.AppendLine(result.ToString());
+//}
+
+//sw.WriteLine(sb.ToString());

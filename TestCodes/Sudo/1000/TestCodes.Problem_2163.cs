@@ -7,12 +7,12 @@ using System.IO;
 
 namespace TestCodes
 {
-	class Problem_
+	class Problem_2163
 	{
-		static void Main_()
+		static void Main_2163()
 		{
-
-
+			var num = ReadLine().Split(' ').Select(int.Parse).ToArray();
+			WriteLine((num[0] * num[1]) - 1);
 		}
 	}
 }

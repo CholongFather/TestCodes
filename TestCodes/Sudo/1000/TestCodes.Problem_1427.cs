@@ -7,11 +7,13 @@ using System.IO;
 
 namespace TestCodes
 {
-    class Problem
-    {
-        static void Main()
-        {
-            var numbers = ReadLine().Split(' ').Select(int.Parse).ToList();
-        }
-    }
+	class Problem_1427
+	{
+		static void Main_1427()
+		{
+			foreach (var item in ReadLine().OrderByDescending(c => c))
+				Write(item);
+			WriteLine();
+		}
+	}
 }
