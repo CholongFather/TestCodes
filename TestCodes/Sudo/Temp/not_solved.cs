@@ -120,3 +120,61 @@ namespace TestCodes.Sudo.Temp
 //}
 
 //sw.WriteLine(sb.ToString());
+
+//var sr = new StreamReader(OpenStandardInput());
+//var sb = new StringBuilder();
+//var num = sr.ReadLine().Split(' ');
+
+//var positveA = !num[0].StartsWith('-');
+//var positveB = !num[1].StartsWith('-');
+//var A = positveA ? num[0] : num[0].Replace("-", "");
+//var B = positveB ? num[1] : num[1].Replace("-", "");
+//var LenA = A.Length;
+//var LenB = B.Length;
+//var upper = false;
+
+//for (var i = 0; i < Math.Max(LenA, LenB); i++)
+//{
+//	var result = upper ? 1 : 0;
+//	upper = false;
+
+//	if (positveA == positveB)
+//		result = int.Parse(A[i].ToString()) + int.Parse(B[i].ToString());
+//	else
+//		result = int.Parse(A[i].ToString()) - int.Parse(B[i].ToString());
+
+//	if (result > 10)
+//	{
+//		upper = true;
+//		result = result % 10;
+//	}
+//	else if (result < 0)
+//	{
+//		upper = true;
+//		result = 10 - result;
+//	}
+
+//	sb.Insert(0, result);
+//}
+
+//if (upper)
+//	sb.Insert(0, 1);
+
+//Write(sb);
+
+
+
+//var alphabet = "abcdefghijklmnopqrstuvwxyzàéèêçœûîùïëä";
+//var word = "quelle est la réponse à la vie, à l'univers et à tout ce ?";
+//var count = 0;
+
+//for (var i = 0; i < word.Length; i++)
+//{
+//    if (!alphabet.Contains(word[i]))
+//        continue;
+
+//    count++;
+//}
+
+
+//WriteLine(count);
