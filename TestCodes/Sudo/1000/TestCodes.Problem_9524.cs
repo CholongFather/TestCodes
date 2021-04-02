@@ -7,11 +7,13 @@ using System.IO;
 
 namespace TestCodes
 {
-	class Problem_
+	class Problem_9524
 	{
-		static void Main_()
+		static void Main_9524()
 		{
-
+			var arr = new int[] { 0, 1, 7, 2, 3 };
+			var num = int.Parse(ReadLine());
+			WriteLine(arr[num]);
 		}
 	}
 }

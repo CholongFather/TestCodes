@@ -7,11 +7,12 @@ using System.IO;
 
 namespace TestCodes
 {
-	class Problem_
+	class Problem_2752
 	{
-		static void Main_()
+		static void Main_2752()
 		{
-
+			var nums = ReadLine().Split(' ').Select(int.Parse).OrderBy(c => c).ToArray();
+			WriteLine(string.Join(' ', nums));
 		}
 	}
 }

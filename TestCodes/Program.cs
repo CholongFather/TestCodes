@@ -12,25 +12,7 @@ namespace TestCodes
     {
         static void Main()
         {
-            var sr = new StreamReader(OpenStandardInput());
-            var sw = new StreamWriter(OpenStandardOutput());
-            var sb = new StringBuilder();
-            sw.AutoFlush = true;
 
-            var cardCount = int.Parse(ReadLine());
-            var cards = ReadLine().Split(' ').Select(int.Parse).GroupBy(c => c).ToDictionary(c => c.Key, v => v.Count());
-            ReadLine();
-            var check = ReadLine().Split(' ').Select(int.Parse).ToArray();
-
-            foreach (var item in check)
-            {
-                if (cards.ContainsKey(item))
-                    sb.Append($"{cards[item]} ");
-                else
-                    sb.Append("0 ");
-			}
-
-			WriteLine(sb.ToString().TrimEnd());
         }
     }
 }
