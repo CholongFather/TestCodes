@@ -1,60 +1,36 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text;
-using static System.Console;
+﻿using System.Collections.Generic;
+using System.Collections;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System;
+using static System.Console;
 
-namespace TestCodes
+class Solution
 {
-	class Problem
+	static void Main()
 	{
-		static void Main()
+		var min = 0;
+		var ch = new string[3] { "S", "N", "U" };
+		var ret = string.Empty;
+
+		for (var i = 0; i < 3; i++)
 		{
-			var sr = new StreamReader(OpenStandardInput());
+			var x = ReadLine().Split().Select(int.Parse).ToArray();
+			var result = 0;
 
-			var data = sr.ReadLine().Split().Select(int.Parse).ToArray();
+			if (x[0] >= 500)
+				result = x[1] * 10 / (x[0] * 10 - 500);
+			else
+				result = x[1] * 10 / x[0] * 10;
 
-			var arr = new long[data[0]];
-
-			for (var i = 0; i < arr.Length; i++)
+			if (min < result)
 			{
-				arr[i] = long.Parse(sr.ReadLine());
+				ret = ch[i];
+				min = result;
 			}
-
-			var a = 0;
-			while (true)
-			{
-				var c = arr.Sum() / (data[1] + a);
-
-				long result = 0;
-				for (var j = 0; j < arr.Length; j++)
-					result += arr[j] / c;
-
-				if (result >= data[1])
-					break;
-
-				a++;
-			}
-
-			var d = arr.Sum() / (data[1] + a - 1);
-			for (var i = d; i > 0; i--)
-			{
-				long result = 0;
-				for (var j = 0; j < arr.Length; j++)
-					result += arr[j] / i;
-
-				if (result >= data[1])
-				{
-					WriteLine(i);
-					break;
-				}
-			}
-
-
-			if (Debugger.IsAttached)
-				Main();
 		}
+
+		WriteLine(ret);
 	}
 }
