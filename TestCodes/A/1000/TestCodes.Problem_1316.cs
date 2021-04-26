@@ -10,13 +10,13 @@ namespace TestCodes
 	{
 		static void Main_1316()
 		{
-            var testCase = int.Parse(ReadLine());
             var result = 0;
+            var testCase = int.Parse(ReadLine());
+
             for (var i = 0; i < testCase; i++)
             {
+                var current = '0';
                 var word = ReadLine();
-
-                char current = '0';
                 var list = new List<char>();
 
                 foreach (var ch in word)

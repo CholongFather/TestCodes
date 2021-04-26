@@ -10,18 +10,14 @@ namespace TestCodes
 	{
 		static void Main_1422()
 		{
-            var numbers = ReadLine().Split(' ').Select(Int32.Parse).ToList();
             var list = new List<string>();
+            var numbers = ReadLine().Split(' ').Select(int.Parse).ToList();
 
             for (var i = 0; i < numbers[0]; i++)
-            {
                 list.Add(ReadLine());
-            }
 
             for (var i = numbers[0]; i < numbers[1]; i++)
-            {
                 list.Add(list.Select(double.Parse).Max().ToString());
-            }
 
             list.Sort(delegate (string x, string y)
             {
@@ -32,9 +28,7 @@ namespace TestCodes
             });
 
             foreach (var item in list)
-            {
                 Write(item);
-            }
 
             WriteLine();
         }

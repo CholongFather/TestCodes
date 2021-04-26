@@ -8,13 +8,13 @@ using System.Numerics;
 
 namespace TestCodes
 {
-    class Problem_1271
-    {
-        static void Main_1271()
-        {
-            var data = ReadLine().Split(' ').Select(BigInteger.Parse).ToList();
+	class Problem_1271
+	{
+		static void Main_1271()
+		{
+			var data = ReadLine().Split(' ').Select(BigInteger.Parse).ToList();
 			WriteLine(data[0] / data[1]);
-            WriteLine(data[0] % data[1]);
-        }
-    }
+			WriteLine(data[0] % data[1]);
+		}
+	}
 }
