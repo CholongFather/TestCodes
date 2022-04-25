@@ -10,11 +10,14 @@ namespace TestCodes
 {
 	class Util
 	{
+		public static int GetI() => int.Parse(ReadLine());
+		public static long GetL() => long.Parse(ReadLine());
+
+		public static int[] GetIArray() => ReadLine().Trim().Split().Select(int.Parse).ToArray();
+		public static long[] GetLArray() => ReadLine().Trim().Split().Select(long.Parse).ToArray();
+
 		static void UtilMain()
 		{
-			//Read 한줄
-			var testCase = int.Parse(ReadLine());
-
 			// 0 5 0 한줄받기
 			var numbers = ReadLine().Split(' ').Select(double.Parse).ToList();
 
@@ -26,6 +29,8 @@ namespace TestCodes
 			//Main 계속 실행
 			//if (Debugger.IsAttached)
 			//	Main();
+
+
 
 			var data = string.Empty;
 			while ((data = ReadLine()) != "#")
